@@ -1,0 +1,19 @@
+<mat-card class="mat-elevation-z0" class="chat-head chat-head-sm" *ngIf="toggle">
+    <mat-icon class="back-icon" (click)="onChatToggle()">arrow_left_alt</mat-icon>
+    <img src="../../assets/profile-icon.png" alt="">
+    <h5>{{room}}</h5>
+</mat-card>
+<mat-card class="mat-elevation-z0" class="chat-head chat-head-lg">
+    <img src="../../assets/profile-icon.png" alt="">
+    <h5>{{room}}</h5>
+</mat-card>
+<mat-card class="mat-elevation-z0" class="chat-body">
+    <app-message class="message-container" [message]="chat" [user]="user" *ngFor="let chat of chats"></app-message>
+</mat-card>
+<form (ngSubmit)="sendMessage(sendForm)" #sendForm="ngForm">
+    <mat-card class="mat-elevation-z0" class="chat-input">
+        <input type="hidden" name="user" value="Shubham" ngModel>
+        <input type="text" placeholder="Enter message.." name="message" ngModel>
+        <button><mat-icon color="primary">send</mat-icon></button>
+    </mat-card> 
+</form>

@@ -1,0 +1,109 @@
+.chat-head{
+    width: 100%;
+    margin: 0;
+    display: flex;
+    height: 10vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #3f51b5;
+    color: #fff;
+}
+.chat-head h5{
+    font-size: 1rem;
+    margin-left: 0.6rem;
+}
+.chat-head img{
+    width: 2.7rem;
+    object-fit: contain;
+}
+.chat-body{
+    height: 63vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f3fe;
+    overflow-y: scroll;
+}
+.chat-input{
+    height: 7.5vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #fefefe;
+}
+.chat-input input{
+    width: 100%;
+    border: none;
+    background-color: #fefefe;
+}
+.chat-input input:focus{
+    outline: none;
+}
+.back-icon{
+    display: none;
+}
+.chat-head-sm{
+    display: none;
+}
+.chat-body-sm{
+    display: none;
+}
+.chat-input-sm{
+    display: none;
+}
+.chat-head-lg{
+    display: flex;
+}
+.chat-body-lg{
+    display: flex;
+}
+.chat-input-lg{
+    display: flex;
+}
+.message-container{
+    width: 100%;
+    display: block !important;
+    flex-direction: column;
+    background-color: transparent !important;
+}
+button{
+    background-color: transparent;
+    outline: none;
+    border-style: none;
+}
+
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+    .back-icon{
+        display: block;
+    }
+    .chat-body{
+        height: 78vh;
+    }
+    .chat-head-lg{
+        display: none;
+    }
+    .chat-body-lg{
+        display: none;
+    }
+    .chat-input-lg{
+        display: none;
+    }
+    .chat-head-sm{
+        display: flex;
+    }
+    .chat-body-sm{
+        display: flex;
+    }
+    .chat-input-sm{
+        display: flex;
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {  }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { }

@@ -1,0 +1,6 @@
+<mat-card class="message" [ngClass]="message.user == user ? 'sender' : 'receiver'">
+    <mat-card-content>
+        <p>{{message.message}}</p>
+        <small>{{message.time}}</small>
+    </mat-card-content>
+</mat-card>

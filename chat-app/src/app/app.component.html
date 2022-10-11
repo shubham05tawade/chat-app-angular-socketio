@@ -1,0 +1,47 @@
+<div class="app" *ngIf="isLoggedIn">
+  
+  <mat-card class="chat-left chat-left-sm" *ngIf="!toggle">
+    <mat-toolbar color="primary">
+      <span>Chat App</span>
+    </mat-toolbar>
+    <br>
+    <mat-card class="mat-elevatio n-z0" style="padding: 0">
+      <app-user (click)="panelToggle(room1)"></app-user>
+      <app-user (click)="panelToggle(room2)"></app-user>
+    </mat-card>
+  </mat-card>
+
+  <mat-card class="chat-left chat-left-lg">
+    <mat-toolbar color="primary">
+      <span>Chat App</span>
+    </mat-toolbar>
+    <br>
+    <mat-card class="mat-elevation-z0" style="padding: 0">
+      <app-user (click)="panelToggle(room1)" [chats]="chatList" [room]="room1"></app-user>
+      <app-user (click)="panelToggle(room2)" [chats]="chatList" [room]="room2"></app-user>
+    </mat-card>
+  </mat-card>
+
+  <mat-card class="chat-right chat-right-lg">
+    <app-chat [user]="userName" [chats]="chatList" [room]="room"></app-chat>
+  </mat-card>
+
+  <mat-card class="chat-right chat-right-sm" *ngIf="toggle" [style.display]="toggle ? 'block' : 'none'">
+    <app-chat [toggle]="toggle" [user]="userName" [chats]="chatList" [room]="room" (chatToggler)="onChatToggle($event)" class="chat-right-container"></app-chat>
+  </mat-card>
+
+</div>
+
+<div class="app" *ngIf="!isLoggedIn">
+  <mat-card class="login-container">
+    <mat-toolbar color="primary">
+      <span>Chat Application</span>
+    </mat-toolbar>
+    <br>
+    <mat-form-field appearance="fill" class="login-form">
+      <mat-label>Username</mat-label>
+      <input matInput [(ngModel)] = "userName">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="openChat()">Log In</button>
+  </mat-card>
+</div>
